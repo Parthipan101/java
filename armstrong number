@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+       
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        if (isArmstrong(number)) {
+            System.out.println(number + " is an Armstrong number.");
+        } else {
+            System.out.println(number + " is not an Armstrong number.");
+        }
+    }
+        public static boolean isArmstrong(int num) {
+        int Num, rem, result = 0;
+        int n = 0;
+        Num = num;
+        while (Num != 0) {
+            Num /= 10;
+            n++;
+        }
+        Num = num;
+        while (Num != 0) {
+            rem =Num % 10;
+            result +=(rem*rem*rem);
+            Num /= 10;
+        }
+
+        
+        return result == num;
+    }
+}
